@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lowdb": "^3.0.0"
+		"@picocss/pico": "^1.5.6",
+		"mongoose": "^6.8.4"
 	}
 }

@@ -4,7 +4,8 @@
 </script>
 <h1>Board</h1>
 <ul>
-{#each data.boards as board (board.id)}
-  <li><a href="/board/{board.id}">{board.name}</a></li>
+{#each data.articles as article (article._id)}
+  <li>{article.title}</li>
 {/each}
 </ul>
+<a href="board/new" role="button">New</a>

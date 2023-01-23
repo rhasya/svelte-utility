@@ -1,22 +1,17 @@
-import { Low, JSONFile } from 'lowdb';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import type { BoardList } from '$lib/types';
+import { Schema, model, connect } from 'mongoose';
 
-// DB Path
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const file = join(__dirname, 'db.json');
+interface IArticle {
+  title: string,
+  content: string,
+  author: string,
+}
 
-// Lowdb
-const adapter = new JSONFile(file);
-const db = new Low(adapter) as Low<BoardList>;
+const articleSchema = new Schema<IArticle>({
+  title: { type: String, required: true },
+  content: { type: String, required: true },
+  author: { type: String, required: true },
+});
 
-// functions
-const boardList = async () => {
-  await db.read();
-  db.data ??= { board_list: [] };
-  return db.data.board_list;
-};
+const Article = model<IArticle>('Article', articleSchema);
 
-export default db;
-export { boardList };
+export { Article };

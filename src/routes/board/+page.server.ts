@@ -1,7 +1,8 @@
-import { boardList } from '$lib/server/db';
+import { Article } from '$lib/server/db';
+import type { PageServerLoad } from './$types';
 
-export async function load() {
-  const boards = await boardList();
-  // list
-  return { boards };
-}
+export const load = (async () => {
+  const articles = await Article.find({}).lean();
+  // console.log(JSON.parse(JSON.stringify(articles)));
+  return { articles: JSON.parse(JSON.stringify(articles)) };
+}) satisfies PageServerLoad;
