@@ -1,4 +1,4 @@
-import { Article } from '$lib/server/db';
+import { Article } from '$lib/server/model';
 import type { PageServerLoad } from './$types';
 
 export const load = (async () => {

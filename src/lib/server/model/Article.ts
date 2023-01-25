@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 interface IArticle {
   title: string,
@@ -14,4 +14,4 @@ const articleSchema = new Schema<IArticle>({
 
 const Article = model<IArticle>('Article', articleSchema);
 
-export { Article };
+export default Article;
