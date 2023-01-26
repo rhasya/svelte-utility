@@ -6,12 +6,10 @@
 	function handleClick() {}
 </script>
 
-<div>
+<hgroup>
 	<h3 style="margin-bottom: 0;">{title}</h3>
-</div>
-<div>
-	<h5 style="margin-bottom: 0;;">{author}</h5>
-</div>
+	<h4 style="margin-bottom: 0;;">{author}</h4>
+</hgroup>
 <div>
 	{@html content}
 </div>

@@ -1,4 +1,4 @@
-import { Schema, model, models } from 'mongoose';
+import { Schema, model, models, Model } from 'mongoose';
 
 interface IArticle {
 	title: string;
@@ -13,4 +13,5 @@ const articleSchema = new Schema<IArticle>({
 });
 
 model<IArticle>('Article', articleSchema);
-export default models.Article;
+const Article = models['Article'];
+export { Article, type IArticle };

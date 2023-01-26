@@ -1,5 +1,6 @@
-import Article from '$lib/server/model/Article';
+import { Article, type IArticle } from '$lib/server/model/Article';
 import { redirect } from '@sveltejs/kit';
+import type { HydratedDocument } from 'mongoose';
 import type { Actions } from '../$types';
 
 export const actions: Actions = {
@@ -10,7 +11,7 @@ export const actions: Actions = {
 		const content = formdata.get('content')?.toString() ?? '';
 
 		// save data to db
-		const article = new Article({
+		const article: HydratedDocument<IArticle> = new Article({
 			author,
 			title,
 			content

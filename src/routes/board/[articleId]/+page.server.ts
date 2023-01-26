@@ -1,6 +1,5 @@
-import Article from '$lib/server/model/Article';
+import { Article } from '$lib/server/model/Article';
 import type { PageServerLoad, Actions } from './$types';
-import { redirect } from '@sveltejs/kit';
 
 export const load = (async ({ params }) => {
 	const article = await Article.findById(params.articleId).lean();
