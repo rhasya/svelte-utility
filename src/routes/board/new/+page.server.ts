@@ -1,4 +1,4 @@
-import { Article } from '$lib/server/model';
+import Article from '$lib/server/model/Article';
 import { redirect } from '@sveltejs/kit';
 import type { Actions } from '../$types';
 

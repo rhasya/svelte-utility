@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageServerData } from "./$types";
   export let data: PageServerData
-  const { title, content, author } = data.article;
+  const { title, content, author, _id } = data.article;
 
   function handleClick() {
 
@@ -21,7 +21,7 @@
     <a href="/board">목록</a>
   </div>
   <div style="display: flex; flex-direction: row; justify-content: flex-end; gap: 8px;">
-    <a href={'#'} on:click={handleClick} role="button">수정</a>
+    <a href="/board/{_id}/edit" role="button">수정</a>
     <a href={'#'} on:click={handleClick} style="background-color: red;" role="button">삭제</a>
   </div>
 </div>

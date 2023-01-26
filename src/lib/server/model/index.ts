@@ -1,5 +1,1 @@
-import Article from './Article';
-
-export {
-  Article,
-};
+import './Article';

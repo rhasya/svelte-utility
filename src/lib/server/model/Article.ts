@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, models } from 'mongoose';
 
 interface IArticle {
   title: string,
@@ -12,6 +12,5 @@ const articleSchema = new Schema<IArticle>({
   author: { type: String, required: true },
 });
 
-const Article = model<IArticle>('Article', articleSchema);
-
-export default Article;
+model<IArticle>('Article', articleSchema);
+export default models.Article;
